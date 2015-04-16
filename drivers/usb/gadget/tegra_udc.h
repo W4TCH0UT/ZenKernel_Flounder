@@ -22,7 +22,6 @@
 #define VDBG(fmt, args...)	do {} while (0)
 #endif
 
-
 #ifdef DEBUG
 #define DBG(stuff...)	pr_info("tegra_udc: " stuff)
 #else
@@ -345,6 +344,11 @@
 
 #define EP_DIR_IN	1
 #define EP_DIR_OUT	0
+
+/* USB Fast Charge */
+#define USB_CHARGING_USB_FASTCHARGE_CURRENT_LIMIT_UA 900000u
+
+extern int force_fast_charge;
 
 /*
  * Endpoint Queue Head data struct
