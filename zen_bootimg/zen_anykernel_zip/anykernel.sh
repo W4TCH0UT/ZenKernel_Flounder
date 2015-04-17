@@ -15,7 +15,7 @@ device.name4=
 device.name5=
 
 # shell variables
-block=/dev/block/platform/msm_sdcc.1/by-name/boot;
+block=/dev/block/platform/sdhci-tegra.3/by-name/LNX;
 
 ## end setup
 
