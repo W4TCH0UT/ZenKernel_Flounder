@@ -22,7 +22,6 @@
 #define VDBG(fmt, args...)	do {} while (0)
 #endif
 
-
 #ifdef DEBUG
 #define DBG(stuff...)	pr_info("tegra_udc: " stuff)
 #else
@@ -37,8 +36,9 @@
 
 #define USB_MAX_CTRL_PAYLOAD		64
 
-/* Charger current limit=1500mA, as per BC1.2 spec */
-#define USB_CHARGING_DCP_CURRENT_LIMIT_UA 1500000u
+/* Charger current limit=2000mA, as not per BC1.2 spec */
+#define USB_CHARGING_DCP_CURRENT_LIMIT_UA 2000000u
+/* Charger current limit=1500mA for CDP USB , as per BCI1.2 spec */
 #define USB_CHARGING_CDP_CURRENT_LIMIT_UA 1500000u
 #define USB_CHARGING_SDP_CURRENT_LIMIT_UA 500000u
 #define USB_CHARGING_NV_CHARGER_CURRENT_LIMIT_UA 2000000u
@@ -345,6 +345,11 @@
 
 #define EP_DIR_IN	1
 #define EP_DIR_OUT	0
+
+/* USB Fast Charge */
+#define USB_CHARGING_USB_FASTCHARGE_CURRENT_LIMIT_UA 900000u
+
+extern int force_fast_charge;
 
 /*
  * Endpoint Queue Head data struct
